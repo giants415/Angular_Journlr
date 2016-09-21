@@ -1,3 +1,2 @@
 console.log('app js is connected');
-angular
-      .module('Journlr', [])
+angular.module('Journlr', [])
