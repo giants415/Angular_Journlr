@@ -1,0 +1,26 @@
+{
+  "name": "angular_journlr",
+  "version": "1.0.0",
+  "description": "simple angular app to make journal entries",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/giants415/Angular_Journlr.git"
+  },
+  "author": "Andrew Vinocur WDI-31",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/giants415/Angular_Journlr/issues"
+  },
+  "homepage": "https://github.com/giants415/Angular_Journlr#readme",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.6.1"
+  }
+}
