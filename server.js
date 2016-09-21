@@ -16,8 +16,17 @@ app.use(function(req, res, next) {
 
 //STATIC ROUTE
 app.use(express.static('public'));
+app.use(express.static('node_modules'));
 
 //HOMEPAGE ROUTE
 app.get('/', function homepage(req, res) {
   res.sendFile(__dirname + '/index.html');
+});
+
+
+
+
+// LISTEN TO LOCALHOST
+app.listen(process.env.PORT || 3000, function () {
+  console.log('Express server is up and running on http://localhost:3000/');
 });
