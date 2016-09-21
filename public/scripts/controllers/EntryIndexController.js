@@ -1,5 +1,5 @@
 angular
-  .module('Journlr', [])
+  .module('Journlr', ['ngRoute'])
   .controller('EntryIndexController', EntryIndexController);
 
 function EntryIndexController(){
