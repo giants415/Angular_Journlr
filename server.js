@@ -12,7 +12,7 @@ app.use(function(req, res, next) {
 });
 
 //REQUIRE DATABASE
-// var db = require('models_Mongo');
+var entry = require('./models/entry.js');
 
 //STATIC ROUTE
 app.use(express.static('public'));
