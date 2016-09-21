@@ -4,12 +4,12 @@ angular
 
 function EntryIndexController(){
   var vm = this;
-  vm.prevEntryList = {};
+  // vm.prevEntry = {};
 
-  vm.prevEntryList = {
-    entry: 'September 19 2016 - Title1',
-    entry: 'September 20 2016 - Title2',
-    entry: 'September 21 2016 - Title3',
-    entry: 'September 22 2016 - Title4',
-  };
+  vm.prevEntries = [
+    {entryTitle: 'Title1', entryDate:'9/19/2016'},
+    {entryTitle: 'Title2', entryDate:'9/20/2016'},
+    {entryTitle: 'Title3', entryDate:'9/21/2016'},
+    {entryTitle: 'Title4', entryDate:'9/22/2016'},
+  ];
 }

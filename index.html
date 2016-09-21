@@ -14,6 +14,7 @@
     <!-- SCRIPTS -->
     <script src="angular/angular.js"></script>
     <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/EntryIndexController.js"></script>
 
   </head>
   <body>
@@ -30,13 +31,10 @@
   </div>
   <div class="row">
     <div class="col-xs-3" ng-controller="EntryIndexController as entryIndexCtrl">
-      <ul>
-        <li>list of all entries</li>
-        <li>entry1</li>
-        <li>entry2</li>
-        <li>entry3</li>
-        <li>entry4</li>
-      </ul>
+      <h5>All Previous Entries</h5>
+        <div ng-repeat="prevEntry in entryIndexCtrl.prevEntries">
+              {{prevEntry.entryTitle}} - {{prevEntry.entryDate}}
+        </div>
     </div>
     <div class="col-xs-9">
       eventually put ng-view here
