@@ -1,4 +1,4 @@
-var entry = require('./models/entry.js');
+// var entry = require('./models/entry.js');
 
 var entryList = [
   {
@@ -8,7 +8,7 @@ var entryList = [
   },
   {
     entryTitle: 'Entry 2',
-    entryDate: 'September 21 2016',
+    entryDate: 'September 22 2016',
     entryBody: 'Here is the second entry. It is not great as great as the first but it is also functional.'
   }
 ];

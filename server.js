@@ -14,6 +14,19 @@ app.use(function(req, res, next) {
 //REQUIRE DATABASE
 var entry = require('./models/entry.js');
 
+var entryList = [
+  {
+    entryTitle: 'Entry 1',
+    entryDate: 'September 21 2016',
+    entryBody: 'Here is the first entry. It is not great but it is functional.'
+  },
+  {
+    entryTitle: 'Entry 2',
+    entryDate: 'September 22 2016',
+    entryBody: 'Here is the second entry. It is not great as great as the first but it is also functional.'
+  }
+];
+
 //STATIC ROUTE
 app.use(express.static('public'));
 app.use(express.static('node_modules'));
@@ -22,6 +35,9 @@ app.use(express.static('node_modules'));
 app.get('/', function homepage(req, res) {
   res.sendFile(__dirname + '/index.html');
 });
+app.get('/api/entryList', function(req, res) {
+  res.json(entryList)
+})
 
 
 
