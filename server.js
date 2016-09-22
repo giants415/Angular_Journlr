@@ -53,6 +53,21 @@ app.get('/api/entries/:id', function (req, res){
   });
 });
 
+api.post('/api/entries', function (req, res){
+  var newEntry = new db.Entry({
+    entryTitle: String,
+    entryDate: String,
+    entryBody: String
+  });
+    newEntry.save(function(err, entry){
+      if (err) {
+        return console.log("error saving new entry: " + err);
+      } else {
+        res.json(newEntry);
+      }
+    });
+});
+
 
 //JSON ENDPOINTS
 app.get('/api', function api_index(req, res) {
@@ -62,7 +77,8 @@ app.get('/api', function api_index(req, res) {
     endpoints: [
       {method: 'GET', path: '/api', description: 'Homepage'},
       {method: 'GET', path: 'api/entries', description: 'displays all entries'},
-      {method: 'GET', path: 'api/entries/:id', description: 'displays one entry'}
+      {method: 'GET', path: 'api/entries/:id', description: 'displays one entry'},
+      {method: 'POST', path: 'api/entries', description: 'adds a new entry'}
     ]
   })
 });
