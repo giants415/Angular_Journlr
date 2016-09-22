@@ -1,11 +1,12 @@
 angular
-  .module('Journlr', ['ngRoute'])
+  .module('Journlr')
   .controller('EntryShowController', EntryShowController);
 
 EntryShowController.$inject = ['$http', '$routeParams'];
 function EntryShowController ($http, $routeParams){
   var vm = this;
-  var entryId = $routeParams.entryId
+  console.log($routeParams);
+  var prevEntry = $routeParams.entryId
   $http({
     method: 'GET',
     url: 'api/entries/'+$routeParams.id

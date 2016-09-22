@@ -1,16 +1,15 @@
 console.log('app js is connected');
-angular
-  .module('Journlr', ['ngRoute'])
+angular.module('Journlr', ['ngRoute'])
   .config(config);
 
 config.$inject = ['$routeProvider', '$locationProvider'];
 function config($routeProvider, $locationProvider) {
   $routeProvider
     .when('/', {
-      controller: 'EntryIndexController',
-      controllerAs: 'entryIndexCtrl'
+      controllerAs: 'entryIndexCtrl',
+      controller: 'EntryIndexController'
     })
-    .when('/api/entries/:id', {
+    .when('/api/entries/id', {
       templateUrl: 'templates/showEntry.html',
       controllerAs: 'entryShowCtrl',
       controller: 'EntryShowController'
@@ -19,9 +18,22 @@ function config($routeProvider, $locationProvider) {
       redirectTo: '/'
     });
 
-  $locationProvider
-    .html5Mode({
+  $locationProvider.html5Mode({
       enabled: true,
       requireBase: false
     });
 }
+
+// EntryShowController.$inject = ['$routeParams'];
+// function EntryShowController($routeParams){
+//   var vm = this;
+//   var prevEntry = $routeParams.entryId;
+//   $http({
+//     method: 'GET',
+//     url: 'api/entries/'+$routeParams.id
+//   }).then( function showSuccessCb(json){
+//     vm.entry = json.data;
+//   }, function errorCb(response) {
+//     console.log('Error getting that entry', response);
+//   });
+// }
