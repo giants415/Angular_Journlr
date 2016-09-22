@@ -9,9 +9,11 @@ function config($routeProvider, $locationProvider) {
       controller: 'EntryIndexController',
       controllerAs: 'EntryIndexCtrl'
     })
-    // .when('/entries/:id'{
-    //   templateUrl:
-    // })
+    .when('/:id', {
+      templateUrl: 'templates/entry-show',
+      controllerAs: 'EntryShowCtrl',
+      controller: 'EntryShowController'
+    })
     .otherwise ({
       redirectTo: '/'
     });
