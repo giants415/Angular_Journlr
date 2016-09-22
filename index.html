@@ -14,9 +14,11 @@
     <!-- ANGULAR SCRIPTS -->
     <script src="angular/angular.js"></script>
     <script src="angular-route/angular-route.js"></script>
+
     <!-- REGULAR SCRIPTS -->
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/EntryIndexController.js"></script>
+    <script src="scripts/controllers/EntryShowController.js"></script>
 
   </head>
   <body>
@@ -32,13 +34,15 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-4" ng-controller="EntryIndexController as entryIndexCtrl">
+    <div class="col-xs-4" ng-controller="EntryIndexController as EntryIndexCtrl">
       <h5>All Previous Entries</h5>
-        <div ng-repeat="prevEntry in entryIndexCtrl.entries">
-              <a ng-href="{{preEntry._id}}">{{prevEntry.entryTitle}} - {{prevEntry.entryDate}}</a>
+        <div ng-repeat="prevEntry in EntryIndexCtrl.entries">
+              <a ng-href="/entries/{{prevEntry._id}}">{{prevEntry.entryTitle}} - {{prevEntry.entryDate}}</a>
         </div>
     </div>
     <div class="col-xs-8">
+      <span>This is where a post will display</span>
+      <div ng-view></div>
     </div>
   </div>
 </div>

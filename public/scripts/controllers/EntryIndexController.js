@@ -2,8 +2,8 @@ angular
   .module('Journlr', ['ngRoute'])
   .controller('EntryIndexController', EntryIndexController);
 
-EntryIndexController.$inject = ['$http'];
-function EntryIndexController($http){
+EntryIndexController.$inject = ['$http', '$routeParams'];
+function EntryIndexController($http, $routeParams){
   var vm = this;
   $http({
     method: 'GET',
