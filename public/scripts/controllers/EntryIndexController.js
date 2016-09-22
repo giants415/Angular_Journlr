@@ -5,13 +5,14 @@ angular
 EntryIndexController.$inject = ['$http'];
 function EntryIndexController($http){
   var vm = this;
+  vm.newEntry = {};
   vm.showEntryAndHideForm = true;
   vm.toggleShows = function(){
     vm.showEntryAndHideForm = !vm.showEntryAndHideForm;
   }
-  vm.submitNew = function(){
-    var url = $location.search({});
-  }
+  // vm.submitNew = function(){
+  //   var url = $location.search({});
+  // }
   $http({
     method: 'GET',
     url: '/api/entries'
@@ -21,4 +22,17 @@ function EntryIndexController($http){
   }, function errorCb(error){
     console.log('error getting all entries: ', error);
   });
+
+  vm.createEntry = function(){
+    $http({
+      method: 'POST',
+      url: 'api/entries',
+      data: vm.newEntry
+    }).then(function successCb(response){
+      vm.entries.push(response.data);
+    }, function errorCb(response){
+      console.log('Error posting new entry', response);
+    });
+  };
+
 }
