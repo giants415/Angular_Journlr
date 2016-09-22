@@ -24,25 +24,25 @@
   <body>
 <h1>4 = {{2*2}}</h1>
 
-<div class="container">
+<div class="container" ng-controller="EntryIndexController as entryIndexCtrl">
   <div class="row">
     <div class="col-xs-8">
       <h1>Journlr</h1>
     </div>
     <div class="col-xs-4">
-      <button type="button" class="btn btn-primary btn-lg" ng-click="newEntry = true">New Entry</button>
+      <button ng-click="entryIndexCtrl.toggleShows()" type="button" class="btn btn-primary btn-lg">New Entry</button>
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-4" ng-controller="EntryIndexController as entryIndexCtrl">
+    <div class="col-xs-4" >
       <h5>All Previous Entries</h5>
         <div ng-repeat="prevEntry in entryIndexCtrl.entries">
-              <a ng-href="entries/{{prevEntry._id}}">{{prevEntry.entryTitle}} - {{prevEntry.entryDate}}</a>
+              <a ng-click="entryIndexCtrl.showEntryAndHideForm = true" ng-href="entries/{{prevEntry._id}}">{{prevEntry.entryTitle}} - {{prevEntry.entryDate}}</a>
         </div>
     </div>
     <div class="col-xs-8">
-      <div ng-view></div>
-      <form>
+      <div ng-show="entryIndexCtrl.showEntryAndHideForm" ng-view></div>
+      <form ng-hide="entryIndexCtrl.showEntryAndHideForm">
         <div class="form-group">
           <label for="entryTitle">Title</label>
           <input type="text" class="form-control" id="entryTitle" placeholder="Title your entry">
@@ -50,7 +50,7 @@
           <input type="text" class="form-control" id="entryDate" placeholder="Date your entry">
           <br>
           <textarea type="text" class="form-control" id="entryBody" placeholder="Write your entry"></textarea>
-          <button type="button" class="btn btn-success">Success</button>
+          <button type="button" ng-click="entryIndexCtrl.toggleShows()" class="btn btn-success">Success</button>
         </div>
       </form>
     </div>

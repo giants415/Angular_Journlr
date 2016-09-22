@@ -5,6 +5,13 @@ angular
 EntryIndexController.$inject = ['$http'];
 function EntryIndexController($http){
   var vm = this;
+  vm.showEntryAndHideForm = true;
+  vm.toggleShows = function(){
+    vm.showEntryAndHideForm = !vm.showEntryAndHideForm;
+  }
+  vm.submitNew = function(){
+    var url = $location.search({});
+  }
   $http({
     method: 'GET',
     url: '/api/entries'
