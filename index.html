@@ -30,7 +30,7 @@
       <h1>Journlr</h1>
     </div>
     <div class="col-xs-4">
-      <button type="button" class="btn btn-primary btn-lg">New Entry</button>
+      <button type="button" class="btn btn-primary btn-lg" ng-click="newEntry = true">New Entry</button>
     </div>
   </div>
   <div class="row">
@@ -42,6 +42,17 @@
     </div>
     <div class="col-xs-8">
       <div ng-view></div>
+      <form>
+        <div class="form-group">
+          <label for="entryTitle">Title</label>
+          <input type="text" class="form-control" id="entryTitle" placeholder="Title your entry">
+          <label for="entryDate">Date</label>
+          <input type="text" class="form-control" id="entryDate" placeholder="Date your entry">
+          <br>
+          <textarea type="text" class="form-control" id="entryBody" placeholder="Write your entry"></textarea>
+          <button type="button" class="btn btn-success">Success</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
