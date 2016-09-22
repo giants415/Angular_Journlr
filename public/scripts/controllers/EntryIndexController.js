@@ -14,7 +14,7 @@ function EntryIndexController($http){
   // ];
   $http({
     method: 'GET',
-    url: '/api/entryList'
+    url: '/api/entries'
   }).then(function successCb(response){
     console.log('get all entries worked', response.data);
     vm.entries = response.data;

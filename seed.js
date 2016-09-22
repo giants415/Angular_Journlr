@@ -10,6 +10,11 @@ var entryList = [
     entryTitle: 'Entry 2',
     entryDate: 'September 22 2016',
     entryBody: 'Here is the second entry. It is not great as great as the first but it is also functional.'
+  },
+  {
+    entryTitle: 'Entry 3',
+    entryDate: 'September 23 2016',
+    entryBody: 'Here is the third entry. It is not great as great as the first or second but it is also functional.'
   }
 ];
 
