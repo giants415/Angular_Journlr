@@ -37,11 +37,19 @@ app.get('/', function homepage(req, res) {
 });
 
 
-//GET ALL ENTRIES FROM DB
+//DISPLAYS ALL ENTRIES
 app.get('/api/entries', function (req, res) {
-  db.Entry.find(function (err, protips){
+  db.Entry.find(function (err, entries){
     if (err) {return console.log('get error: ' + err);}
     res.json(entries);
+  });
+});
+
+//DISPLAY ONE ENTRY
+app.get('/api/entries/:id', function (req, res){
+  db.Entry.findOne({_id: req.params.id}, function(err, data){
+    if (err) {return console.log("single entry get error: " + err);}
+    res.json(data);
   });
 });
 
@@ -54,7 +62,7 @@ app.get('/api', function api_index(req, res) {
     endpoints: [
       {method: 'GET', path: '/api', description: 'Homepage'},
       {method: 'GET', path: 'api/entries', description: 'displays all entries'},
-      {method: 'GET', path: 'api/entries/:id', description: 'displays one entries'}
+      {method: 'GET', path: 'api/entries/:id', description: 'displays one entry'}
     ]
   })
 });
