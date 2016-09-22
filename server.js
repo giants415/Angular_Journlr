@@ -53,7 +53,7 @@ app.get('/api/entries/:id', function (req, res){
   });
 });
 
-api.post('/api/entries', function (req, res){
+app.post('/api/entries', function (req, res){
   var newEntry = new db.Entry({
     entryTitle: String,
     entryDate: String,
