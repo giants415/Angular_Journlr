@@ -3,6 +3,8 @@ var express = require('express'),
 
 var bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 
 //CROSS ORIGIN
 app.use(function(req, res, next) {
@@ -11,31 +13,24 @@ app.use(function(req, res, next) {
   next();
 });
 
+// STATIC ROUTE
+app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/node_modules'));
+
 //REQUIRE DATABASE
 var db = require('./models');
 
-// var entryList = [
-//   {
-//     entryTitle: 'Entry 1',
-//     entryDate: 'September 21 2016',
-//     entryBody: 'Here is the first entry. It is not great but it is functional.'
-//   },
-//   {
-//     entryTitle: 'Entry 2',
-//     entryDate: 'September 22 2016',
-//     entryBody: 'Here is the second entry. It is not great as great as the first but it is also functional.'
-//   }
-// ];
 
-//STATIC ROUTE
-app.use(express.static('public'));
-app.use(express.static('node_modules'));
 
 //HOMEPAGE ROUTE
 app.get('/', function homepage(req, res) {
   res.sendFile(__dirname + '/index.html');
 });
-
+//TEMPLATE ROUTE
+app.get('/templates/:name', function templates(req, res){
+  var name = req.params.name;
+  res.sendFile(__dirname + '/templates/' + name + '.html');
+});
 
 //DISPLAYS ALL ENTRIES
 app.get('/api/entries', function (req, res) {

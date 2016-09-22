@@ -9,8 +9,8 @@ function config($routeProvider, $locationProvider) {
       controllerAs: 'entryIndexCtrl',
       controller: 'EntryIndexController'
     })
-    .when('/api/entries/id', {
-      templateUrl: 'templates/showEntry.html',
+    .when('/entries/:id', {
+      templateUrl: '/templates/showEntry',
       controllerAs: 'entryShowCtrl',
       controller: 'EntryShowController'
     })

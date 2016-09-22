@@ -1,11 +1,11 @@
-<div class = "container" ng-controller="EntryShowController as EntryShowCtrl">
+<div class = "container" ng-controller="EntryShowController as entryShowCtrl">
   <div class = "row">
     <div>
-      {{entryTitle}}
-      {{entryDate}}
+      {{entryShowCtrl.entry.entryTitle}}
+      {{entryShowCtrl.entry.entryDate}}
     </div>
     <div>
-      {{entryBody}}
+      {{entryShowCtrl.entry.entryBody}}
     </div>
   </div>
 </div>
