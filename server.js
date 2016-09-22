@@ -20,8 +20,6 @@ app.use(express.static(__dirname + '/node_modules'));
 //REQUIRE DATABASE
 var db = require('./models');
 
-
-
 //HOMEPAGE ROUTE
 app.get('/', function homepage(req, res) {
   res.sendFile(__dirname + '/index.html');
