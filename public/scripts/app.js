@@ -1,5 +1,6 @@
 console.log('app js is connected');
-angular.module('Journlr', ['ngRoute'])
+angular
+  .module('Journlr', ['ngRoute'])
   .config(config);
 
 config.$inject = ['$routeProvider', '$locationProvider'];
@@ -7,11 +8,11 @@ function config($routeProvider, $locationProvider) {
   $routeProvider
     .when('/', {
       controller: 'EntryIndexController',
-      controllerAs: 'EntryIndexCtrl'
+      controllerAs: 'entryIndexCtrl'
     })
-    .when('/:id', {
+    .when('/api/entries/:id', {
       templateUrl: 'templates/showEntry.html',
-      controllerAs: 'EntryShowCtrl',
+      controllerAs: 'entryShowCtrl',
       controller: 'EntryShowController'
     })
     .otherwise ({

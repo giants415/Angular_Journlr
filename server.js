@@ -53,6 +53,7 @@ app.get('/api/entries/:id', function (req, res){
   });
 });
 
+//POST A NEW ENTRY
 app.post('/api/entries', function (req, res){
   var newEntry = new db.Entry({
     entryTitle: String,

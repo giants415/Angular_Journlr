@@ -18,7 +18,7 @@
     <!-- REGULAR SCRIPTS -->
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/EntryIndexController.js"></script>
-    <script src="scripts/controllers/EntryShowController.js"></script>
+    <!-- <script src="scripts/controllers/EntryShowController.js"></script> -->
 
   </head>
   <body>
@@ -34,9 +34,9 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-4" ng-controller="EntryIndexController as EntryIndexCtrl">
+    <div class="col-xs-4" ng-controller="EntryIndexController as entryIndexCtrl">
       <h5>All Previous Entries</h5>
-        <div ng-repeat="prevEntry in EntryIndexCtrl.entries">
+        <div ng-repeat="prevEntry in entryIndexCtrl.entries">
               <a ng-href="/entries/{{prevEntry._id}}">{{prevEntry.entryTitle}} - {{prevEntry.entryDate}}</a>
         </div>
     </div>
