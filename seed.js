@@ -1,4 +1,4 @@
-// var entry = require('./models/entry.js');
+var db = require('./models');
 
 var entryList = [
   {
@@ -12,3 +12,12 @@ var entryList = [
     entryBody: 'Here is the second entry. It is not great as great as the first but it is also functional.'
   }
 ];
+
+db.Entry.remove ({}, function(err,entries) {
+
+    db.Entry.create(entryList, function (err, entries) {
+      if (err) { return console.log('err', err); }
+      console.log('created', entries.length, 'entries');
+      process.exit();
+    });
+});

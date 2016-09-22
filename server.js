@@ -12,7 +12,7 @@ app.use(function(req, res, next) {
 });
 
 //REQUIRE DATABASE
-var entry = require('./models/entry.js');
+var db = require('./models');
 
 var entryList = [
   {
@@ -35,6 +35,8 @@ app.use(express.static('node_modules'));
 app.get('/', function homepage(req, res) {
   res.sendFile(__dirname + '/index.html');
 });
+
+//GET ALL ENTRIES
 app.get('/api/entryList', function(req, res) {
   res.json(entryList)
 })
