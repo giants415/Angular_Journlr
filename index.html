@@ -34,9 +34,7 @@
   <div class="row">
     <div class="col-xs-4" ng-controller="EntryIndexController as entryIndexCtrl">
       <h5>All Previous Entries</h5>
-        <div ng-repeat="prevEntry in entryIndexCtrl.entries">
-              {{prevEntry.entryTitle}} - {{prevEntry.entryDate}}
-        </div>
+      <div ng-view></div>
     </div>
     <div class="col-xs-8">
     </div>
