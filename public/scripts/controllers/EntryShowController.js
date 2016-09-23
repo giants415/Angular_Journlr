@@ -13,4 +13,17 @@ function EntryShowController ($http, $routeParams){
   }, function errorCb(response) {
     console.log('Error getting that entry', response);
   });
+
+  vm.deleteEntry = function(){
+    $http({
+      method: 'DELETE',
+      url: 'api/entries/'+$routeParams.id
+    }).then(function deleteSuccess(json){
+      var index = vm.entries.indexOf(entry);
+      vm.entries.splice(index, 1);
+    }, function deleteError(response){
+      console.log('Error deleteing entry ', response);
+    });
+  }
+  
 }
