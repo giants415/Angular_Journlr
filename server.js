@@ -49,9 +49,9 @@ app.get('/api/entries/:id', function (req, res){
 //POST A NEW ENTRY
 app.post('/api/entries', function (req, res){
   var newEntry = new db.Entry({
-    entryTitle: String,
-    entryDate: String,
-    entryBody: String
+    entryTitle: req.body.entryTitle,
+    entryDate: req.body.entryDate,
+    entryBody: req.body.entryBody
   });
     newEntry.save(function(err, entry){
       if (err) {

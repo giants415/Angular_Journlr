@@ -45,11 +45,11 @@
       <form ng-hide="entryIndexCtrl.showEntryAndHideForm" ng-submit="entryIndexCtrl.createEntry()">
         <div class="form-group">
           <label for="entryTitle">Title</label>
-            <input type="text" class="form-control" id="entryTitle" placeholder="Title your entry">
+            <input ng-model="entryIndexCtrl.newEntry.entryTitle" type="text" class="form-control" id="entryTitle" placeholder="Title your entry">
           <label for="entryDate">Date</label>
-            <input type="text" class="form-control" id="entryDate" placeholder="Date your entry">
+            <input ng-model="entryIndexCtrl.newEntry.entryDate" type="text" class="form-control" id="entryDate" placeholder="Date your entry">
           <br>
-            <textarea type="text" class="form-control" id="entryBody" placeholder="Write your entry"></textarea>
+            <textarea ng-model="entryIndexCtrl.newEntry.entryBody" type="text" class="form-control" id="entryBody" placeholder="Write your entry"></textarea>
           <button type="submit" ng-click="entryIndexCtrl.toggleShows()" class="btn btn-success">Submit Entry</button>
         </div>
       </form>
