@@ -42,7 +42,7 @@
     </div>
     <div class="col-xs-8">
       <div ng-show="entryIndexCtrl.showEntryAndHideForm" ng-view></div>
-      <form ng-hide="entryIndexCtrl.showEntryAndHideForm" ng-submit="entryIndexCtrl.createEntry()">
+      <form id="newEntryForm" ng-hide="entryIndexCtrl.showEntryAndHideForm" ng-submit="entryIndexCtrl.createEntry()">
         <div class="form-group">
           <label for="entryTitle">Title</label>
             <input ng-model="entryIndexCtrl.newEntry.entryTitle" type="text" class="form-control" id="entryTitle" placeholder="Title your entry">
