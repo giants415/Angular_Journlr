@@ -1,7 +1,39 @@
+@import url(https://fonts.googleapis.com/css?family=Merriweather);
+@import url(https://fonts.googleapis.com/css?family=Oxygen);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:700);
 body {
   background-color: #D9BAD8; }
 
+h1 {
+  font-family: "Roboto Condensed", serif;
+  font-size: 4.5em; }
+
+h5 {
+  font-family: "Roboto Condensed", serif;
+  font-size: 1.98em; }
+
+.titleBar {
+  margin-top: 1.5em; }
+
+.newEntryBtn {
+  margin-top: 2em; }
+
+.entryTitleDate {
+  font-family: "Oxygen", serif;
+  font-size: 2.4em; }
+
+.entryBody {
+  font-family: "Merriweather", serif;
+  font-size: 1.08em; }
+
+.prevEntryList {
+  margin-left: -20.7em; }
+
 #entryDisplay {
-  max-width: 800px; }
+  background-color: #ebdbeb;
+  max-width: 600px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 1.98em; }
 
 /*# sourceMappingURL=finalStyle.css.map */
