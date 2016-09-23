@@ -9,7 +9,7 @@
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/Finalstyle.css">
 
     <!-- ANGULAR SCRIPTS -->
     <script src="angular/angular.js"></script>
@@ -22,40 +22,39 @@
 
   </head>
   <body>
-<h1>4 = {{2*2}}</h1>
 
-<div class="container" ng-controller="EntryIndexController as entryIndexCtrl">
-  <div class="row">
-    <div class="col-xs-8">
-      <h1>Journlr</h1>
-    </div>
-    <div class="col-xs-4">
-      <button ng-click="entryIndexCtrl.toggleShows()" type="button" class="btn btn-primary btn-lg">New Entry</button>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-4">
-      <h5>All Previous Entries</h5>
-        <div ng-repeat="prevEntry in entryIndexCtrl.entries">
-              <a ng-click="entryIndexCtrl.showEntryAndHideForm = true" ng-href="entries/{{prevEntry._id}}">{{prevEntry.entryTitle}} - {{prevEntry.entryDate}}</a>
+    <div class="container" ng-controller="EntryIndexController as entryIndexCtrl">
+      <div class="row">
+        <div class="col-xs-8">
+          <h1>Journlr</h1>
         </div>
-    </div>
-    <div class="col-xs-6">
-      <div ng-show="entryIndexCtrl.showEntryAndHideForm" ng-view></div>
-      <form id="newEntryForm" ng-hide="entryIndexCtrl.showEntryAndHideForm" ng-submit="entryIndexCtrl.createEntry()">
-        <div class="form-group">
-          <label for="entryTitle">Title</label>
-            <input ng-model="entryIndexCtrl.newEntry.entryTitle" type="text" class="form-control" id="entryTitle" placeholder="Title your entry">
-          <label for="entryDate">Date</label>
-            <input ng-model="entryIndexCtrl.newEntry.entryDate" type="text" class="form-control" id="entryDate" placeholder="Date your entry">
-          <br>
-            <textarea ng-model="entryIndexCtrl.newEntry.entryBody" type="text" class="form-control" id="entryBody" placeholder="Write your entry"></textarea>
-          <button type="submit" ng-click="entryIndexCtrl.toggleShows()" class="btn btn-success">Submit Entry</button>
+        <div class="col-xs-4">
+          <button ng-click="entryIndexCtrl.toggleShows()" type="button" class="btn btn-primary btn-lg">New Entry</button>
         </div>
-      </form>
+      </div>
+      <div class="row">
+        <div class="col-xs-4">
+          <h5>All Previous Entries</h5>
+            <div ng-repeat="prevEntry in entryIndexCtrl.entries">
+                  <a ng-click="entryIndexCtrl.showEntryAndHideForm = true" ng-href="entries/{{prevEntry._id}}">{{prevEntry.entryTitle}} - {{prevEntry.entryDate}}</a>
+            </div>
+        </div>
+        <div class="col-xs-6">
+          <div ng-show="entryIndexCtrl.showEntryAndHideForm" ng-view></div>
+          <form id="newEntryForm" ng-hide="entryIndexCtrl.showEntryAndHideForm" ng-submit="entryIndexCtrl.createEntry()">
+            <div class="form-group">
+              <label for="entryTitle">Title</label>
+                <input ng-model="entryIndexCtrl.newEntry.entryTitle" type="text" class="form-control" id="entryTitle" placeholder="Title your entry">
+              <label for="entryDate">Date</label>
+                <input ng-model="entryIndexCtrl.newEntry.entryDate" type="text" class="form-control" id="entryDate" placeholder="Date your entry">
+              <br>
+                <textarea ng-model="entryIndexCtrl.newEntry.entryBody" type="text" class="form-control" id="entryBody" placeholder="Write your entry"></textarea>
+              <button type="submit" ng-click="entryIndexCtrl.toggleShows()" class="btn btn-success">Submit Entry</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
 
   </body>
