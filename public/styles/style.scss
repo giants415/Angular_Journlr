@@ -14,12 +14,17 @@ body {
 h1 {
   font-family: $listTitleFont;
   font-size: $size*.75;
+  letter-spacing: $size*.01;
   margin-left: 7em;
 }
 
 h5{
   font-family: $listTitleFont;
   font-size: $size*.33;
+}
+
+a {
+  color: black;
 }
 
 .titleBar {
@@ -34,11 +39,26 @@ h5{
 
 .entryBody{
   font-family: $entryBody;
-  font-size: $size*.18;
+  font-size: $size*.19;
 }
 
 .prevEntryList {
-  margin-left: $size*-1.5;
+  border-radius: 10px;
+  max-width: 250px;
+  margin-left: $size*-1.4;
+  font-family: $entryBody;
+  font-size: $size*.18;
+  background-color: #ebdbeb;
+}
+
+.newEntryBtn{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  // margin-left: $size*.4;
+}
+
+.entryContainer{
+margin-left: $size*1.333333;
 }
 
 #entryDisplay {
@@ -46,10 +66,12 @@ h5{
   max-width: 600px;
   border: 1px solid black;
   border-radius: 10px;
+  margin-left: $size*1.8;
   padding: $size*.33;
 }
 
 #newEntryForm{
   font-family: $listTitleFont;
   font-size: $size*.2;
+  max-width: 85%;
 }

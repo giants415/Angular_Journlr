@@ -7,11 +7,15 @@ body {
 h1 {
   font-family: "Roboto Condensed", serif;
   font-size: 4.5em;
+  letter-spacing: 0.06em;
   margin-left: 7em; }
 
 h5 {
   font-family: "Roboto Condensed", serif;
   font-size: 1.98em; }
+
+a {
+  color: black; }
 
 .titleBar {
   margin-top: 1.5em; }
@@ -22,20 +26,34 @@ h5 {
 
 .entryBody {
   font-family: "Merriweather", serif;
-  font-size: 1.08em; }
+  font-size: 1.14em; }
 
 .prevEntryList {
-  margin-left: -9em; }
+  border-radius: 10px;
+  max-width: 250px;
+  margin-left: -8.4em;
+  font-family: "Merriweather", serif;
+  font-size: 1.08em;
+  background-color: #ebdbeb; }
+
+.newEntryBtn {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+
+.entryContainer {
+  margin-left: 8em; }
 
 #entryDisplay {
   background-color: #ebdbeb;
   max-width: 600px;
   border: 1px solid black;
   border-radius: 10px;
+  margin-left: 10.8em;
   padding: 1.98em; }
 
 #newEntryForm {
   font-family: "Roboto Condensed", serif;
-  font-size: 1.2em; }
+  font-size: 1.2em;
+  max-width: 85%; }
 
 /*# sourceMappingURL=finalStyle.css.map */
