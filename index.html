@@ -37,7 +37,7 @@
                   <a ng-click="entryIndexCtrl.showEntryAndHideForm = true" ng-href="entries/{{prevEntry._id}}">{{prevEntry.entryTitle}} - {{prevEntry.entryDate}}</a>
             </div>
             <div>
-              <button ng-click="entryIndexCtrl.toggleShows()" type="button" class="btn btn-primary btn-lg newEntryBtn">New Entry</button>
+              <button ng-click="entryIndexCtrl.toggleShows(); entryIndexCtrl.urlReset()" type="button" class="btn btn-primary btn-lg newEntryBtn">New Entry</button>
             </div>
         </div>
         <div class="col-xs-8 entryContainer">
