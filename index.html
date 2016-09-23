@@ -43,9 +43,8 @@
           <div ng-show="entryIndexCtrl.showEntryAndHideForm" ng-view></div>
           <form id="newEntryForm" ng-hide="entryIndexCtrl.showEntryAndHideForm" ng-submit="entryIndexCtrl.createEntry()">
             <div class="form-group">
-              <label for="entryTitle">Title</label>
                 <input ng-model="entryIndexCtrl.newEntry.entryTitle" type="text" class="form-control" id="entryTitle" placeholder="Title your entry">
-              <label for="entryDate">Date</label>
+                <br>
                 <input ng-model="entryIndexCtrl.newEntry.entryDate" type="text" class="form-control" id="entryDate" placeholder="Date your entry">
               <br>
                 <textarea ng-model="entryIndexCtrl.newEntry.entryBody" type="text" class="form-control" rows="6" id="entryBody" placeholder="Write your entry"></textarea>

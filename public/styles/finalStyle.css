@@ -6,7 +6,8 @@ body {
 
 h1 {
   font-family: "Roboto Condensed", serif;
-  font-size: 4.5em; }
+  font-size: 4.5em;
+  margin-left: 7em; }
 
 h5 {
   font-family: "Roboto Condensed", serif;
@@ -14,9 +15,6 @@ h5 {
 
 .titleBar {
   margin-top: 1.5em; }
-
-.newEntryBtn {
-  margin-top: 2em; }
 
 .entryTitleDate {
   font-family: "Oxygen", serif;
@@ -27,7 +25,7 @@ h5 {
   font-size: 1.08em; }
 
 .prevEntryList {
-  margin-left: -20.7em; }
+  margin-left: -9em; }
 
 #entryDisplay {
   background-color: #ebdbeb;
@@ -35,5 +33,9 @@ h5 {
   border: 1px solid black;
   border-radius: 10px;
   padding: 1.98em; }
+
+#newEntryForm {
+  font-family: "Roboto Condensed", serif;
+  font-size: 1.2em; }
 
 /*# sourceMappingURL=finalStyle.css.map */

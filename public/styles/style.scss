@@ -14,6 +14,7 @@ body {
 h1 {
   font-family: $listTitleFont;
   font-size: $size*.75;
+  margin-left: 7em;
 }
 
 h5{
@@ -25,9 +26,6 @@ h5{
   margin-top: $size*.25;
 }
 
-.newEntryBtn {
-  margin-top: 2em;
-}
 
 .entryTitleDate {
   font-family: $entryInfo;
@@ -40,7 +38,7 @@ h5{
 }
 
 .prevEntryList {
-  margin-left: $size*-3.45;
+  margin-left: $size*-1.5;
 }
 
 #entryDisplay {
@@ -49,4 +47,9 @@ h5{
   border: 1px solid black;
   border-radius: 10px;
   padding: $size*.33;
+}
+
+#newEntryForm{
+  font-family: $listTitleFont;
+  font-size: $size*.2;
 }
