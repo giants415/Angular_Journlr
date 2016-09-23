@@ -14,7 +14,7 @@ function EntryShowController ($http, $routeParams){
     console.log('Error getting that entry', response);
   });
 
-  vm.deleteEntry = function(){
+  vm.deleteEntry = function(entry){
     $http({
       method: 'DELETE',
       url: 'api/entries/'+$routeParams.id
@@ -25,5 +25,5 @@ function EntryShowController ($http, $routeParams){
       console.log('Error deleteing entry ', response);
     });
   }
-  
+
 }
