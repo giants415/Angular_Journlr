@@ -10,9 +10,7 @@ function EntryIndexController($http){
   vm.toggleShows = function(){
     vm.showEntryAndHideForm = !vm.showEntryAndHideForm;
   }
-  // vm.submitNew = function(){
-  //   var url = $location.search({});
-  // }
+
   $http({
     method: 'GET',
     url: '/api/entries'
