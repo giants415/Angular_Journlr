@@ -18,9 +18,11 @@ function EntryShowController ($http, $routeParams){
     console.log(entry);
     $http({
       method: 'DELETE',
-      url: '/api/entries/'+$routeParams.id
+      url: '/api/entries/'+$routeParams.id,
+      data: entry
     }).then(function deleteSuccess(json){
-      var index = vm.entries.indexOf(entry);
+      var entryToDelete = $routeParams.id
+      var index = vm.entries.indexOf(entryToDelete);
       vm.entries.splice(index, 1);
     }, function deleteError(response){
       console.log('Error deleteing entry ', response);

@@ -1,6 +1,6 @@
 <div class = "container" ng-controller="EntryShowController as entryShowCtrl">
   <div class = "row" id="entryDisplay">
-    <div class = "entryTitleDate">
+    <div id="{{ 'entry' + $index }}" class = "entryTitleDate">
       {{entryShowCtrl.entry.entryTitle}}
       <br>
       {{entryShowCtrl.entry.entryDate}}

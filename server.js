@@ -64,14 +64,17 @@ app.post('/api/entries', function (req, res){
 
 //DELTE AN ENTRY
 app.delete('/api/entries/:id', function (req, res){
-  var entryId = req.params.id;
-  db.Entry.findOneAndRemove({_id: entryId}, function (err, deleteEntry){
-    if (err){
-      return console.log("error deleting entry: " + err);
-    } else {
-      res.json(deleteEntry);
-    };
+  db.Entry.findOneAndRemove({ _id: req.params.entryId }, function(err, foundEntry){
+  res.json(foundEntry);
   });
+  // var entryId = req.params.id;
+  // db.Entry.findOneAndRemove({_id: entryId}, function (err, deleteEntry){
+  //   if (err){
+  //     return console.log("error deleting entry: " + err);
+  //   } else {
+  //     res.json(deleteEntry);
+  //   };
+  // });
 });
 
 
