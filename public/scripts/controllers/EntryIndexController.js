@@ -30,6 +30,7 @@ function EntryIndexController($http){
       console.log(response.data)
       vm.entries.push(response.data);
       vm.newEntry = {};
+      console.log(vm.entries);
     }, function errorCb(response){
       console.log('Error posting new entry', response);
     });
