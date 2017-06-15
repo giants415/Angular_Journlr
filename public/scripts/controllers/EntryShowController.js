@@ -22,9 +22,13 @@ function EntryShowController ($http, $routeParams){
       method: 'DELETE',
       url: '/api/entries/'+$routeParams.id,
     }).then(function deleteSuccess(entry){
-      // var entryToDelete = $routeParams.id
-      // console.log(entryToDelete);
-      var index = vm.entries.indexOf($routeParams.id);
+      // CURRENT THEORY:
+      // SERVER DELETES THE ENTRY BUT WHEN THE FRONT END
+      // TRIES TO FOLLOW THROUGH, THE ENTRY IS GONE AND IT
+      // THEREFORE CAN'T FIND THE INDEX OF THE ENTRY
+      var entryToDelete = $routeParams.id
+      console.log('entry to delete: ' + entryToDelete);
+      var index = vm.entries.indexOf(entryToDelete);
       console.log('heres the entry ' + $routeParams.id);
       vm.entries.splice(index, 1);
     }, function deleteError(response){
