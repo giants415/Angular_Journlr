@@ -15,17 +15,17 @@ function EntryShowController ($http, $routeParams){
   });
 
   vm.deleteEntry = function(entry){
-    var entryToDelete = $routeParams.id;
-    console.log(entryToDelete);
-    console.log(entries.indexOf(entryToDelete));
+    // var entryToDelete = $routeParams.id;
+    // console.log('delete this entry: ' + entry);
+    // console.log(vm.entries.indexOf(entryToDelete));
     $http({
       method: 'DELETE',
       url: '/api/entries/'+$routeParams.id,
-      data: entryToDelete
-    }).then(function deleteSuccess(entryToDelete){
+    }).then(function deleteSuccess(entry){
       // var entryToDelete = $routeParams.id
       // console.log(entryToDelete);
-      var index = vm.entries.indexOf(entryToDelete);
+      var index = vm.entries.indexOf($routeParams.id);
+      console.log('heres the entry ' + $routeParams.id);
       vm.entries.splice(index, 1);
     }, function deleteError(response){
       console.log('Error deleteing entry ', response);
