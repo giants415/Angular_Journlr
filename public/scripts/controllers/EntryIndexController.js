@@ -21,6 +21,9 @@ function EntryIndexController($http){
     console.log('error getting all entries: ', error);
   });
 
+//MIGHT HAVE TO BUILD AN INDIVIDUAL GET ENTRY HERE
+// MAYBE MOVE DELETE ENTRY TO THIS CONTROLLER???
+
   vm.createEntry = function(){
     $http({
       method: 'POST',
