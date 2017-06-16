@@ -2,8 +2,8 @@ angular
   .module('Journlr')
   .controller('EntryIndexController', EntryIndexController);
 
-EntryIndexController.$inject = ['$http', '$routeParams'];
-function EntryIndexController($http, $routeParams){
+EntryIndexController.$inject = ['$http', '$routeParams', '$window'];
+function EntryIndexController($http, $routeParams, $window){
   var vm = this;
   vm.newEntry = {};
   vm.showEntryAndHideForm = true;
@@ -51,6 +51,7 @@ function EntryIndexController($http, $routeParams){
       var index = vm.entries.indexOf(entryToDelete);
       console.log('heres the entry ' + $routeParams.id);
       vm.entries.splice(index, 1);
+      $window.location.href = '/';
     }, function deleteError(response){
       console.log('Error deleteing entry ', response);
     });
