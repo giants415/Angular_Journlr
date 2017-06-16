@@ -64,6 +64,7 @@ app.post('/api/entries', function (req, res){
 
 //DELTE AN ENTRY
 app.delete('/api/entries/:id', function (req, res){
+  console.log('in the server delete');
   // db.Entry.findOneAndRemove({ _id: req.params.entryId }, function(err, foundEntry){
   // res.json(foundEntry);
   // });
@@ -72,6 +73,7 @@ app.delete('/api/entries/:id', function (req, res){
     if (err){
       return console.log("error deleting entry: " + err);
     } else {
+      console.log('successfully through DB server delete');
       res.json(deleteEntry);
     };
   });

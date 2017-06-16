@@ -17,6 +17,7 @@ function config($routeProvider, $locationProvider) {
     .otherwise ({
       redirectTo: '/'
     });
+    //specify the delete location
 
   $locationProvider.html5Mode({
       enabled: true,
