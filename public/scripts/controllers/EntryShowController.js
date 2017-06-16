@@ -2,7 +2,7 @@ angular
   .module('Journlr')
   .controller('EntryShowController', EntryShowController);
 
-EntryShowController.$inject = ['$http', '$routeParams', '$route'];
+EntryShowController.$inject = ['$http', '$routeParams'];
 function EntryShowController ($http, $routeParams){
   var vm = this;
   $http({
