@@ -54,6 +54,7 @@ function EntryIndexController($http, $routeParams, $window){
       $window.location.href = '/';
     }, function deleteError(response){
       console.log('Error deleteing entry ', response);
+      //comment to trigger git
     });
   }
 //MIGHT HAVE TO BUILD AN INDIVIDUAL GET ENTRY HERE
