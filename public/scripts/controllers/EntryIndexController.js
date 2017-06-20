@@ -3,8 +3,8 @@ angular
   .controller('EntryIndexController', EntryIndexController);
 
 
-EntryIndexController.$inject = ['$http', '$routeParams', '$window'];
-function EntryIndexController($http, $routeParams, $window){
+EntryIndexController.$inject = ['$http', '$routeParams', '$window', '$location'];
+function EntryIndexController($http, $routeParams, $window, $location){
   var vm = this;
   vm.newEntry = {};
   vm.showEntryAndHideForm = true;
