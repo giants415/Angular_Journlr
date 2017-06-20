@@ -2,6 +2,7 @@ angular
   .module('Journlr')
   .controller('EntryIndexController', EntryIndexController);
 
+
 EntryIndexController.$inject = ['$http', '$routeParams', '$window'];
 function EntryIndexController($http, $routeParams, $window){
   var vm = this;
@@ -9,6 +10,10 @@ function EntryIndexController($http, $routeParams, $window){
   vm.showEntryAndHideForm = true;
   vm.toggleShows = function(){
     vm.showEntryAndHideForm = !vm.showEntryAndHideForm;
+  }
+  vm.urlReset = function (){
+    console.log('urlReset called');
+    $location.url('');
   }
 
   $http({

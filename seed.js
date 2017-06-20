@@ -1,5 +1,6 @@
 var db = require('./models');
 
+
 var entryList = [
   {
     entryTitle: 'Entry 1',
