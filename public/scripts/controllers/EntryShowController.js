@@ -13,4 +13,6 @@ function EntryShowController ($http, $routeParams){
   }, function errorCb(response) {
     console.log('Error getting that entry', response);
   });
+
+
 }

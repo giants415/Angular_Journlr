@@ -1,6 +1,6 @@
 <div class = "container" ng-controller="EntryShowController as entryShowCtrl">
   <div class = "row" id="entryDisplay">
-    <div class = "entryTitleDate">
+    <div id="{{ 'entry' + $index }}" class = "entryTitleDate">
       {{entryShowCtrl.entry.entryTitle}}
       <br>
       {{entryShowCtrl.entry.entryDate}}
@@ -9,5 +9,7 @@
     <div class = "entryBody">
       {{entryShowCtrl.entry.entryBody}}
     </div>
+  <hr>
+  <button ng-click="entryIndexCtrl.deleteEntry(entry)" ng-controller="EntryIndexController as entryIndexCtrl" type="button" class="btn btn-danger">Delete Entry</button>
   </div>
 </div>

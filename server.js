@@ -62,6 +62,23 @@ app.post('/api/entries', function (req, res){
     });
 });
 
+//DELTE AN ENTRY
+app.delete('/api/entries/:id', function (req, res){
+  console.log('in the server delete');
+  // db.Entry.findOneAndRemove({ _id: req.params.entryId }, function(err, foundEntry){
+  // res.json(foundEntry);
+  // });
+  var entryId = req.params.id;
+  db.Entry.findOneAndRemove({_id: entryId}, function (err, deleteEntry){
+    if (err){
+      return console.log("error deleting entry: " + err);
+    } else {
+      console.log('successfully through DB server delete');
+      res.json(deleteEntry);
+    };
+  });
+});
+
 
 //JSON ENDPOINTS
 app.get('/api', function api_index(req, res) {
@@ -72,6 +89,7 @@ app.get('/api', function api_index(req, res) {
       {method: 'GET', path: '/api', description: 'Homepage'},
       {method: 'GET', path: 'api/entries', description: 'displays all entries'},
       {method: 'GET', path: 'api/entries/:id', description: 'displays one entry'},
+      {method: 'DELETE', path: 'api/entries/:id', description: 'deletes an entry'},
       {method: 'POST', path: 'api/entries', description: 'adds a new entry'}
     ]
   })
